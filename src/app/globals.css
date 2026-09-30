@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --ds-color-ivory-50: #fbf7f0;
+  --ds-color-ink-950: #1b1917;
+  --ds-color-black: #000000;
+  --ds-color-green-700: #007354;
+  --ds-color-rule: #aeada9;
+
+  --ds-page-x-mobile: 1.5rem;
+  --ds-page-x: 3rem;
+  --ds-header-height: 6rem;
+  --ds-title-width: 53.125rem;
+  --ds-page-width: 120rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--ds-color-ivory-50);
+  --color-foreground: var(--ds-color-ink-950);
+  --color-foreground-strong: var(--ds-color-black);
+  --color-brand: var(--ds-color-green-700);
+  --color-rule: var(--ds-color-rule);
+
+  --font-display: var(--font-unica77);
+  --font-label: var(--font-pitch-sans);
+
+  --spacing-page-x-mobile: var(--ds-page-x-mobile);
+  --spacing-page-x: var(--ds-page-x);
+  --spacing-header: var(--ds-header-height);
+
+  --container-title: var(--ds-title-width);
+  --container-site: var(--ds-page-width);
+
+  --text-display-mobile: 2.5rem;
+  --text-display-mobile--line-height: 2.75rem;
+
+  --text-display-tablet: 3.5rem;
+  --text-display-tablet--line-height: 3.85rem;
+
+  --text-display-desktop: 4rem;
+  --text-display-desktop--line-height: 4.4rem;
+
+  --text-display-wide: 5rem;
+  --text-display-wide--line-height: 5.5rem;
+
+  --breakpoint-tablet: 48rem;
+  --breakpoint-laptop: 64rem;
+  --breakpoint-desktop: 75rem;
+  --breakpoint-wide: 90rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    min-height: 100%;
+    background: var(--ds-color-ivory-50);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--ds-color-ivory-50);
+    color: var(--ds-color-ink-950);
+    font-family: var(--font-unica77), sans-serif;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ds-color-green-700);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background: var(--ds-color-green-700);
+    color: var(--ds-color-ivory-50);
+  }
+
+  #main-content {
+    scroll-margin-top: var(--ds-header-height);
+  }
 }
