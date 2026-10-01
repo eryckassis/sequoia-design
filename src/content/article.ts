@@ -1,6 +1,8 @@
 import type {
   ArticleHeroContent,
   ArticleIntroContent,
+  ArticleShareContent,
+  RelatedStory,
 } from "@/components/article";
 
 export const articleHeroContent = {
@@ -41,3 +43,30 @@ export const articleIntroContent = {
   conclusion:
     "A year ago, most Cursor users treated AI as autocomplete. Today, more tasks are started by agents than by humans. Software engineering accounts for over half of all AI tool usage across professions. Every other category is still in single digits. The reason is that software engineering is primarily intelligence work. AI has crossed the threshold where it can do most of the intelligence work autonomously and leave the judgement to humans. Software engineering got there first. It is coming to every single profession.",
 } as const satisfies ArticleIntroContent;
+
+export const articleShareContent = {
+  title: "Sequoia: The Design Ideas",
+} as const satisfies ArticleShareContent;
+
+export const relatedStories = [
+  {
+    category: "Perspective",
+    title: "2026: This is AGI",
+    author: "Pat Grady and Sonya Huang",
+  },
+  {
+    category: "Perspective",
+    title: "The Opening, Midgame and Endgame in Startups",
+    author: "David Cahn",
+  },
+  {
+    category: "Perspective",
+    title: "Generative AI’s Act o1",
+    author: "Sonya Huang, Pat Grady, and o1",
+  },
+  {
+    category: "News",
+    title: "Building for a New Era",
+    author: "Team Sequoia",
+  },
+] as const satisfies readonly RelatedStory[];
