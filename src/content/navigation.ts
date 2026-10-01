@@ -2,24 +2,24 @@ import type { NavigationItem } from "@/components/navigation";
 
 export const primaryNavigation = [
   {
-    label: "Our Founders",
-    href: "/our-founders",
+    label: "Founder",
+    href: "/founder",
   },
   {
-    label: "Our Companies",
-    href: "/our-companies",
+    label: "Notes",
+    href: "/notes",
   },
   {
-    label: "Our Team",
-    href: "/our-team",
+    label: "Tendences",
+    href: "/tendences",
   },
   {
     label: "Stories",
     href: "/stories",
   },
   {
-    label: "Podcasts",
-    href: "/podcasts",
+    label: "About Me",
+    href: "/about-me",
   },
   {
     label: "Arc",

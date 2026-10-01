@@ -52,21 +52,37 @@ export const relatedStories = [
   {
     category: "Perspective",
     title: "2026: This is AGI",
-    author: "Pat Grady and Sonya Huang",
+    author: "Eryck Assis",
+    media: {
+      kind: "image",
+      src: "https://framerusercontent.com/images/OIU4R6DkGeDBA3fY2ksnNV09iI.webp?width=920&height=920",
+    },
   },
   {
     category: "Perspective",
     title: "The Opening, Midgame and Endgame in Startups",
-    author: "David Cahn",
+    author: "Eryck Assis",
+    media: {
+      kind: "video",
+      src: "https://framerusercontent.com/assets/UFkCPkpyuuo7nsvkY5oUK91dTqI.mp4",
+    },
   },
   {
     category: "Perspective",
     title: "Generative AI’s Act o1",
-    author: "Sonya Huang, Pat Grady, and o1",
+    author: "Eryck Assis",
+    media: {
+      kind: "image",
+      src: "https://framerusercontent.com/images/X3tOtZzP9z74Lyl8mrpy7vlMAQ.webp?width=920&height=921",
+    },
   },
   {
     category: "News",
     title: "Building for a New Era",
-    author: "Team Sequoia",
+    author: "Sequoia",
+    media: {
+      kind: "video",
+      src: "https://framerusercontent.com/assets/ZJcYQwL2PAEB5UTmxplQKCock3k.mp4",
+    },
   },
 ] as const satisfies readonly RelatedStory[];

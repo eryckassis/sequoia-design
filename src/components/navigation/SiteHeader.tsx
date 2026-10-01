@@ -1,7 +1,6 @@
 import { PageContainer } from "@/components/layout";
 import { BrandLogo } from "./BrandLogo";
 import { PrimaryNavigation, type NavigationItem } from "./PrimaryNavigation";
-import { SearchIcon } from "./SearchIcon";
 
 type SiteHeaderProps = Readonly<{
   items: readonly NavigationItem[];
@@ -13,9 +12,8 @@ export function SiteHeader({ items }: SiteHeaderProps) {
       <PageContainer className="relative flex h-full items-center">
         <BrandLogo />
 
-        <div className="ml-auto flex items-center gap-1 laptop:gap-6 wide:gap-[35px]">
+        <div className="ml-auto flex items-center gap-1 laptop:gap-6 wide:gap-8.75">
           <PrimaryNavigation items={items} />
-          <SearchIcon />
         </div>
 
         <span

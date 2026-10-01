@@ -5,7 +5,7 @@ import { PageContainer } from "@/components/layout";
 export type StoryMedia =
   | Readonly<{ kind: "image"; src: ImageProps["src"] }>
   | Readonly<{ kind: "gif"; src: string }>
-  | Readonly<{ kind: "video"; src: string; poster?: string }>;
+  | Readonly<{ kind: "video"; src: string }>;
 
 export type RelatedStory = Readonly<{
   category: string;
@@ -38,10 +38,11 @@ function StoryCardMedia({ media }: Readonly<{ media?: StoryMedia }>) {
     return (
       <video
         src={media.src}
-        poster={media.poster}
+        autoPlay
+        loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-hidden="true"
         tabIndex={-1}
         className="absolute inset-0 size-full object-cover"
