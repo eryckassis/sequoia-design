@@ -8,7 +8,7 @@ type SiteHeaderProps = Readonly<{
 
 export function SiteHeader({ items }: SiteHeaderProps) {
   return (
-    <header className="fixed inset-x-0 top-0 z-10 h-header bg-canvas">
+    <header className="fixed inset-x-0 top-0 z-9999 h-header bg-canvas">
       <PageContainer className="relative flex h-full items-center">
         <BrandLogo />
 

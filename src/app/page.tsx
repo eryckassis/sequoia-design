@@ -14,6 +14,7 @@ import {
 import { articleIntroImage } from "@/content/media";
 import { primaryNavigation } from "@/content/navigation";
 import { relatedStories } from "@/content/related-stories";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 export default function Home() {
   return (
@@ -29,12 +30,10 @@ export default function Home() {
             image={articleIntroImage}
           />
           <ArticleContinuation />
-          <ArticleFooter
-            share={articleShareContent}
-            stories={relatedStories}
-          />
+          <ArticleFooter share={articleShareContent} stories={relatedStories} />
         </article>
       </main>
+      <SiteFooter />
     </>
   );
 }
