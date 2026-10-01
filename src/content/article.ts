@@ -5,7 +5,7 @@ import type {
 } from "@/components/article";
 
 export const articleHeroContent = {
-  title: "The Design Ideas",
+  title: "Design and Ideas.",
   techText: {
     text: "Sequoia:",
     fontWeight: 400,
@@ -44,5 +44,5 @@ export const articleIntroContent = {
 } as const satisfies ArticleIntroContent;
 
 export const articleShareContent = {
-  title: "Sequoia: The Design Ideas",
+  title: "Sequoia: Design and Ideas.",
 } as const satisfies ArticleShareContent;

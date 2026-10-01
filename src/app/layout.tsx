@@ -6,7 +6,7 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const unica77 = localFont({
   src: [
@@ -18,6 +18,7 @@ const unica77 = localFont({
   ],
   variable: "--font-unica77",
   display: "swap",
+  preload: false,
 });
 
 const pitchSans = localFont({
@@ -52,6 +53,7 @@ const rosart = localFont({
   ],
   variable: "--font-rosart",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -65,7 +67,16 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={cn(unica77.variable, pitchSans.variable, rosart.variable, "font-sans", geist.variable)}>
+    <html
+      lang="en"
+      className={cn(
+        unica77.variable,
+        pitchSans.variable,
+        rosart.variable,
+        "font-sans",
+        geist.variable,
+      )}
+    >
       <body>{children}</body>
     </html>
   );
