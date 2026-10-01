@@ -5,6 +5,7 @@ export { ArticleShare, type ArticleShareContent } from "./ArticleShare";
 export {
   ArticleIntroSection,
   type ArticleIntroContent,
+  type ArticleSectionImage,
   type ArticleIntroSectionProps,
 } from "./ArticleIntroSection";
 export { ArticleMeta } from "./ArticleMeta";

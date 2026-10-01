@@ -4,13 +4,18 @@ import {
   articleContinuationSection,
   Opportunities,
 } from "@/content/article-continuation";
+import { opportunityMapImage } from "@/content/media";
 
 import { ArticleIntroSection } from "./ArticleIntroSection";
 
 export function ArticleContinuation() {
   return (
     <>
-      <ArticleIntroSection afterMedia media="map">
+      <ArticleIntroSection
+        afterMedia
+        image={opportunityMapImage}
+        media="map"
+      >
         {articleContinuationSection.map(({ id, heading, paragraphs }) => (
           <section
             key={id}

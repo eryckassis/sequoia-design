@@ -2,7 +2,6 @@ import type {
   ArticleHeroContent,
   ArticleIntroContent,
   ArticleShareContent,
-  RelatedStory,
 } from "@/components/article";
 
 export const articleHeroContent = {
@@ -47,42 +46,3 @@ export const articleIntroContent = {
 export const articleShareContent = {
   title: "Sequoia: The Design Ideas",
 } as const satisfies ArticleShareContent;
-
-export const relatedStories = [
-  {
-    category: "Perspective",
-    title: "2026: This is AGI",
-    author: "Eryck Assis",
-    media: {
-      kind: "image",
-      src: "https://framerusercontent.com/images/OIU4R6DkGeDBA3fY2ksnNV09iI.webp?width=920&height=920",
-    },
-  },
-  {
-    category: "Perspective",
-    title: "The Opening, Midgame and Endgame in Startups",
-    author: "Eryck Assis",
-    media: {
-      kind: "video",
-      src: "https://framerusercontent.com/assets/UFkCPkpyuuo7nsvkY5oUK91dTqI.mp4",
-    },
-  },
-  {
-    category: "Perspective",
-    title: "Generative AI’s Act o1",
-    author: "Eryck Assis",
-    media: {
-      kind: "image",
-      src: "https://framerusercontent.com/images/X3tOtZzP9z74Lyl8mrpy7vlMAQ.webp?width=920&height=921",
-    },
-  },
-  {
-    category: "News",
-    title: "Building for a New Era",
-    author: "Sequoia",
-    media: {
-      kind: "video",
-      src: "https://framerusercontent.com/assets/ZJcYQwL2PAEB5UTmxplQKCock3k.mp4",
-    },
-  },
-] as const satisfies readonly RelatedStory[];

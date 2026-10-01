@@ -10,9 +10,10 @@ import {
   articleHeroContent,
   articleIntroContent,
   articleShareContent,
-  relatedStories,
 } from "@/content/article";
+import { articleIntroImage } from "@/content/media";
 import { primaryNavigation } from "@/content/navigation";
+import { relatedStories } from "@/content/related-stories";
 
 export default function Home() {
   return (
@@ -23,7 +24,10 @@ export default function Home() {
       <main id="main-content">
         <article>
           <ArticleHero content={articleHeroContent} />
-          <ArticleIntroSection content={articleIntroContent} />
+          <ArticleIntroSection
+            content={articleIntroContent}
+            image={articleIntroImage}
+          />
           <ArticleContinuation />
           <ArticleFooter
             share={articleShareContent}

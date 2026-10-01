@@ -16,13 +16,16 @@ export type ArticleIntroContent = Readonly<{
   explanation: string;
   conclusion: string;
 }>;
+
+export type ArticleSectionImage = Readonly<Pick<ImageProps, "src" | "alt">>;
+
 type SectionBody =
   | Readonly<{ content: ArticleIntroContent; children?: never }>
   | Readonly<{ content?: never; children: ReactNode }>;
 
 export type ArticleIntroSectionProps = SectionBody &
   Readonly<{
-    image?: Pick<ImageProps, "src" | "alt">;
+    image?: ArticleSectionImage;
     media?: "panorama" | "map";
     afterMedia?: boolean;
   }>;
@@ -34,7 +37,9 @@ export function ArticleIntroSection({
   media,
   afterMedia = false,
 }: ArticleIntroSectionProps) {
+  const hasImage = Boolean(image?.src);
   const mediaKind = media ?? (content || image ? "panorama" : undefined);
+
   return (
     <section className="bg-canvas">
       <PageContainer
@@ -71,9 +76,9 @@ export function ArticleIntroSection({
               className={`relative mt-8 w-full overflow-hidden bg-brand ${
                 mediaKind === "map" ? "aspect-155/143" : "aspect-31/15"
               }`}
-              aria-hidden={image ? undefined : true}
+              aria-hidden={hasImage ? undefined : true}
             >
-              {image && (
+              {hasImage && image && (
                 <Image
                   src={image.src}
                   alt={image.alt}
