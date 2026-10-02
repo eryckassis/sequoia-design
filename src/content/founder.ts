@@ -5,26 +5,26 @@ import type {
   ArticleShareContent,
 } from "@/components/article";
 
-type FounderPageContent = Readonly<{
-  metadata: Readonly<{
+export type FounderPageContent = Readonly<{
+  metadata?: Readonly<{
     title: string;
     description: string;
   }>;
-  hero: ArticleHeroContent;
-  intro: ArticleIntroContent;
-  continuation: ArticleContinuationContent;
-  share: ArticleShareContent;
+  hero?: ArticleHeroContent;
+  intro?: ArticleIntroContent;
+  continuation?: ArticleContinuationContent;
+  share?: ArticleShareContent;
 }>;
 
-export const founderContent = {
+export const founderContent: FounderPageContent = {
   metadata: {
     title: "Founder | Sequoia",
     description:
-      "Building an enduring company begins with clarity, conviction and the willingness to keep learning.",
+      "Meet Eryck, the creator of a design newsletter about web design, programming, data, and the creative process.",
   },
 
   hero: {
-    title: "Build for the long term.",
+    title: "Inspired By Nature.",
     techText: {
       text: "Founder:",
       fontWeight: 400,
@@ -45,100 +45,43 @@ export const founderContent = {
   },
 
   intro: {
-    lead: "An enduring company begins with a founder who sees a possibility before it becomes obvious.",
+    lead: "Hello, my name is Eryck. I am the creator of this design newsletter—at least, that’s how I’m calling this project for now. I’ll keep this about-me short and sweet, just enough to introduce my ideas, studies, and notes not only in web design, but also programming and data. My approach stays lighthearted, straightforward, and accessible, even for curious beginners.",
     overview:
-      "At the beginning, there is rarely a complete plan. There is a problem worth solving, a small group of people willing to work on it and a belief that the future can be different. The founder’s responsibility is to turn that belief into something customers can use, trust and eventually depend on.",
-    sectionTitle: "Conviction before consensus",
+      "This project began as a way to share my work, thoughts, and discoveries with you. I wanted a place to showcase my projects and reflect on recent design trends, as well as to discuss the habits and stories behind my creative process. My hope is that this newsletter will spark your curiosity and encourage you to keep up with my journey, offering an alternative to the overwhelming content often found online.",
+    sectionTitle:
+      "I’m always brimming with ideas and love the challenge of turning them into reality. For me, it’s about transforming a scribble on paper into something tangible and useful—something that makes sense for real people.",
     thesis: {
-      prefix: "A founder’s first job is to see the future with ",
-      firstTerm: "clarity",
-      middle: " and pursue it with ",
-      secondTerm: "conviction",
-      suffix: ".",
+      prefix:
+        "Lately, I’ve been deeply immersed in countless projects, studies, and case analyses. I’m also exploring ",
+      firstTerm: "new professional opportunities",
+      middle: " in my field, fueled by a ",
+      secondTerm: "genuine desire",
+      suffix: " to make a difference.",
     },
     explanation:
-      "Conviction is not certainty. It is the willingness to make a considered decision while information is still incomplete. Strong founders remain committed to the problem while changing their assumptions, product and approach whenever reality gives them better evidence.",
+      "Creativity, trends, tips, guidance, and fresh perspectives—these are just the tip of the iceberg of what you’ll find here. I promise everything I share will be grounded in evidence, especially when it comes to emerging trends.",
     conclusion:
-      "That balance matters. Companies lose their way when conviction becomes stubbornness or when learning becomes a reason to avoid choosing. Progress comes from holding the mission firmly and the method loosely.",
+      "My mission is to help you tap into your creative side and put it into action.",
   },
 
   continuation: {
     sections: [
       {
-        id: "start-with-a-real-problem",
-        heading: "Start With a Real Problem",
+        id: "a-free-evolving-newsletter",
+        heading: "Most importantly, this newsletter will always be free.",
         paragraphs: [
-          "The strongest companies often begin with a problem the founder understands personally. Proximity reveals details that are easy to miss from the outside: where existing tools fail, which compromises customers tolerate and what a meaningfully better experience could feel like.",
-          "A real problem creates urgency. Customers do not need to be persuaded that it exists; they need to believe this team can solve it better than the alternatives.",
-        ],
-      },
-      {
-        id: "find-the-edge",
-        heading: "Find the Edge",
-        paragraphs: [
-          "A new company cannot win by doing everything at once. It needs an edge: a technical insight, a distribution advantage, a sharper understanding of the customer or a way of working that established companies cannot easily copy.",
-          "The edge may look narrow at first. Its value is that it gives the company a place to begin, learn and earn the right to expand.",
-        ],
-      },
-      {
-        id: "build-trust-through-progress",
-        heading: "Build Trust Through Progress",
-        paragraphs: [
-          "Customers, employees and investors respond to progress they can see. A working product, a retained customer or an important technical breakthrough communicates more than a polished story without evidence.",
-          "The earliest version does not need to contain the entire vision. It needs to solve one meaningful problem well enough that people choose to return.",
-        ],
-      },
-      {
-        id: "the-founders-job-changes",
-        heading: "The Founder’s Job Changes",
-        paragraphs: [
-          "In the beginning, founders do nearly everything. As the company grows, their work shifts from completing every task to establishing direction, hiring exceptional people and creating an environment where good decisions can happen without them.",
-          "Delegation does not mean distance. The founder remains responsible for the quality bar, the company’s values and the few decisions that can alter its trajectory.",
+          "Over time, it might become something like a diary of a web designer—an evolving product for anyone who wants to follow along.",
         ],
       },
     ],
-
-    items: [
-      {
-        label: "Customer truth",
-        description:
-          "Stay close enough to customers to understand what they do, not only what they say. Their behavior is the clearest signal of whether the product matters.",
-      },
-      {
-        label: "Technical ambition",
-        description:
-          "Use technology to make something fundamentally better, not merely more convenient. Lasting advantages usually come from difficult work compounded over time.",
-      },
-      {
-        label: "Talent density",
-        description:
-          "A small group of exceptional people can move with more clarity and speed than a larger team built before the work demands it.",
-      },
-      {
-        label: "Speed",
-        description:
-          "Move quickly where decisions are reversible. Learning sooner creates more opportunities to correct the course while the cost of change remains low.",
-      },
-      {
-        label: "Endurance",
-        description:
-          "Important companies take time. Protect the energy, relationships and financial discipline required to continue through periods when progress is less visible.",
-      },
-      {
-        label: "Stewardship",
-        description:
-          "Every product decision shapes the trust customers place in the company. Treat that trust as an asset that must be earned repeatedly.",
-      },
-    ],
-
+    items: [],
     closing:
-      "There is no single path to building an enduring company. The common thread is a founder who keeps learning, makes difficult choices and remains accountable for turning an ambitious idea into useful reality.",
-
+      "So, welcome to this space! I hope you enjoy reading as much as I enjoy creating it. Let’s explore, learn, and grow together, one edition at a time.",
     callToAction:
-      "If you are building for the long term, we want to hear from you.",
+      "Thank you for joining me on this journey. Stay curious and inspired!",
   },
 
   share: {
-    title: "Founder: Build for the long term.",
+    title: "Hello, my name is Eryck.",
   },
-} as const satisfies FounderPageContent;
+};

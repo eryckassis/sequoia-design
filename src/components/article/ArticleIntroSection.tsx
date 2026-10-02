@@ -28,6 +28,7 @@ export type ArticleIntroSectionProps = SectionBody &
     image?: ArticleSectionImage;
     media?: "panorama" | "map";
     afterMedia?: boolean;
+    showSideRules?: boolean;
   }>;
 
 export function ArticleIntroSection({
@@ -36,6 +37,7 @@ export function ArticleIntroSection({
   image,
   media,
   afterMedia = false,
+  showSideRules = true,
 }: ArticleIntroSectionProps) {
   const hasImage = Boolean(image?.src);
   const mediaKind = media ?? (content || image ? "panorama" : undefined);
@@ -45,7 +47,13 @@ export function ArticleIntroSection({
       <PageContainer
         className={afterMedia ? "pt-[3.4rem] desktop:pt-17" : "pt-8"}
       >
-        <div className="relative mx-auto w-full max-w-article-frame px-6 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:border-x after:border-rule">
+        <div
+          className={`relative mx-auto w-full max-w-article-frame px-6 ${
+            showSideRules
+              ? "after:pointer-events-none after:absolute after:inset-0 after:z-10 after:border-x after:border-rule"
+              : ""
+          }`}
+        >
           <div className="flex flex-col gap-8 font-body text-body-mobile text-foreground desktop:gap-10 desktop:text-body-desktop">
             {content ? (
               <>

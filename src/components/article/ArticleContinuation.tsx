@@ -18,15 +18,22 @@ export type ArticleContinuationContent = Readonly<{
 type ArticleContinuationProps = Readonly<{
   content: ArticleContinuationContent;
   image?: ArticleSectionImage;
+  showSideRules?: boolean;
 }>;
 
 export function ArticleContinuation({
   content,
   image,
+  showSideRules = true,
 }: ArticleContinuationProps) {
   return (
     <>
-      <ArticleIntroSection afterMedia image={image} media="map">
+      <ArticleIntroSection
+        afterMedia
+        image={image}
+        media="map"
+        showSideRules={showSideRules}
+      >
         {content.sections.map(({ id, heading, paragraphs }) => (
           <section
             key={id}
@@ -45,7 +52,7 @@ export function ArticleContinuation({
       </ArticleIntroSection>
 
       <div className="bg-canvas pb-16 desktop:pb-[84px]">
-        <ArticleIntroSection afterMedia>
+        <ArticleIntroSection afterMedia showSideRules={showSideRules}>
           {content.items.map(({ label, description }) => (
             <p key={label}>
               <strong className="font-semibold">{label}. </strong>

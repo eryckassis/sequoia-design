@@ -5,15 +5,19 @@ import {
   ArticleFooter,
   ArticleHero,
   ArticleIntroSection,
+  RelatedStories,
 } from "@/components/article";
 import { SkipLink, SiteFooter } from "@/components/layout";
 import { SiteHeader } from "@/components/navigation";
 import { founderContent } from "@/content/founder";
-import { articleIntroImage, opportunityMapImage } from "@/content/media";
+import { founderIntroImage, founderPrinciplesImage } from "@/content/media";
 import { primaryNavigation } from "@/content/navigation";
 import { relatedStories } from "@/content/related-stories";
 
-export const metadata: Metadata = founderContent.metadata;
+export const metadata: Metadata = founderContent.metadata ?? {
+  title: "Founder | Sequoia",
+  description: "Founder at Sequoia.",
+};
 
 export default function FounderPage() {
   return (
@@ -23,22 +27,30 @@ export default function FounderPage() {
 
       <main id="main-content">
         <article>
-          <ArticleHero content={founderContent.hero} />
+          {founderContent.hero && <ArticleHero content={founderContent.hero} />}
 
-          <ArticleIntroSection
-            content={founderContent.intro}
-            image={articleIntroImage}
-          />
+          {founderContent.intro && (
+            <ArticleIntroSection
+              content={founderContent.intro}
+              image={founderIntroImage}
+            />
+          )}
 
-          <ArticleContinuation
-            content={founderContent.continuation}
-            image={opportunityMapImage}
-          />
+          {founderContent.continuation && (
+            <ArticleContinuation
+              content={founderContent.continuation}
+              image={founderPrinciplesImage}
+            />
+          )}
 
-          <ArticleFooter
-            share={founderContent.share}
-            stories={relatedStories}
-          />
+          {founderContent.share ? (
+            <ArticleFooter
+              share={founderContent.share}
+              stories={relatedStories}
+            />
+          ) : (
+            <RelatedStories stories={relatedStories} />
+          )}
         </article>
       </main>
 
