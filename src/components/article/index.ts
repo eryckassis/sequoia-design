@@ -1,5 +1,8 @@
 export { ArticleHero, type ArticleHeroContent } from "./ArticleHero";
-export { ArticleContinuation } from "./ArticleContinuation";
+export {
+  ArticleContinuation,
+  type ArticleContinuationContent,
+} from "./ArticleContinuation";
 export { ArticleFooter, type ArticleFooterProps } from "./ArticleFooter";
 export { ArticleShare, type ArticleShareContent } from "./ArticleShare";
 export {

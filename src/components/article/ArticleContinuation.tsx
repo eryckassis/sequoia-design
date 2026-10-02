@@ -1,22 +1,33 @@
-import {
-  articleCallToAction,
-  articleClosing,
-  articleContinuationSection,
-  Opportunities,
-} from "@/content/article-continuation";
-import { opportunityMapImage } from "@/content/media";
-
+import type { ArticleSectionImage } from "./ArticleIntroSection";
 import { ArticleIntroSection } from "./ArticleIntroSection";
 
-export function ArticleContinuation() {
+export type ArticleContinuationContent = Readonly<{
+  sections: readonly Readonly<{
+    id: string;
+    heading: string;
+    paragraphs: readonly string[];
+  }>[];
+  items: readonly Readonly<{
+    label: string;
+    description: string;
+  }>[];
+  closing: string;
+  callToAction: string;
+}>;
+
+type ArticleContinuationProps = Readonly<{
+  content: ArticleContinuationContent;
+  image?: ArticleSectionImage;
+}>;
+
+export function ArticleContinuation({
+  content,
+  image,
+}: ArticleContinuationProps) {
   return (
     <>
-      <ArticleIntroSection
-        afterMedia
-        image={opportunityMapImage}
-        media="map"
-      >
-        {articleContinuationSection.map(({ id, heading, paragraphs }) => (
+      <ArticleIntroSection afterMedia image={image} media="map">
+        {content.sections.map(({ id, heading, paragraphs }) => (
           <section
             key={id}
             aria-labelledby={id}
@@ -35,15 +46,15 @@ export function ArticleContinuation() {
 
       <div className="bg-canvas pb-16 desktop:pb-[84px]">
         <ArticleIntroSection afterMedia>
-          {Opportunities.map(({ label, description }) => (
+          {content.items.map(({ label, description }) => (
             <p key={label}>
               <strong className="font-semibold">{label}. </strong>
               {description}
             </p>
           ))}
 
-          <p>{articleClosing}</p>
-          <p>{articleCallToAction}</p>
+          <p>{content.closing}</p>
+          <p>{content.callToAction}</p>
         </ArticleIntroSection>
       </div>
     </>

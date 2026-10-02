@@ -17,10 +17,7 @@ export const primaryNavigation = [
     label: "Stories",
     href: "/stories",
   },
-  {
-    label: "About Me",
-    href: "/about-me",
-  },
+
   {
     label: "Arc",
     href: "/arc",

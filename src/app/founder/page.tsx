@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import {
   ArticleContinuation,
   ArticleFooter,
@@ -6,17 +8,14 @@ import {
 } from "@/components/article";
 import { SkipLink, SiteFooter } from "@/components/layout";
 import { SiteHeader } from "@/components/navigation";
-import {
-  articleHeroContent,
-  articleIntroContent,
-  articleShareContent,
-} from "@/content/article";
-import { articleContinuationContent } from "@/content/article-continuation";
+import { founderContent } from "@/content/founder";
 import { articleIntroImage, opportunityMapImage } from "@/content/media";
 import { primaryNavigation } from "@/content/navigation";
 import { relatedStories } from "@/content/related-stories";
 
-export default function Home() {
+export const metadata: Metadata = founderContent.metadata;
+
+export default function FounderPage() {
   return (
     <>
       <SkipLink />
@@ -24,19 +23,22 @@ export default function Home() {
 
       <main id="main-content">
         <article>
-          <ArticleHero content={articleHeroContent} />
+          <ArticleHero content={founderContent.hero} />
 
           <ArticleIntroSection
-            content={articleIntroContent}
+            content={founderContent.intro}
             image={articleIntroImage}
           />
 
           <ArticleContinuation
-            content={articleContinuationContent}
+            content={founderContent.continuation}
             image={opportunityMapImage}
           />
 
-          <ArticleFooter share={articleShareContent} stories={relatedStories} />
+          <ArticleFooter
+            share={founderContent.share}
+            stories={relatedStories}
+          />
         </article>
       </main>
 

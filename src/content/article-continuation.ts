@@ -1,3 +1,5 @@
+import type { ArticleContinuationContent } from "@/components/article";
+
 export type EditorialSection = Readonly<{
   id: string;
   heading: string;
@@ -104,3 +106,10 @@ export const articleClosing =
   "As these services mature, teams that once sold assistants may try to take responsibility for complete outcomes. Companies built around delivery from the start can move quickly because their product, operations and customer relationship already center on the finished work.";
 
 export const articleCallToAction = "If you’re building one, reach out.";
+
+export const articleContinuationContent = {
+  sections: articleContinuationSection,
+  items: Opportunities,
+  closing: articleClosing,
+  callToAction: articleCallToAction,
+} as const satisfies ArticleContinuationContent;
