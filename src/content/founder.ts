@@ -38,7 +38,7 @@ export const founderContent = {
       draggable: true,
       sweep: true,
     },
-    author: "Sequoia",
+    author: "Me",
     authorHref: "/founder",
     publishedAt: "2026-10-01",
     publishedLabel: "October 1, 2026",
