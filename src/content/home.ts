@@ -49,4 +49,10 @@ export const homeStories = [
     author: "Eryck Assis",
     media: relatedStoryMedia.generativeAiAct,
   },
+  {
+    category: "Perspective",
+    title: "Building for a New Era",
+    author: "Eryck Assis",
+    media: relatedStoryMedia.newEra,
+  },
 ] as const satisfies readonly RelatedStory[];
