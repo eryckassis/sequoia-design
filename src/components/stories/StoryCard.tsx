@@ -78,28 +78,31 @@ function StoryCardContent({ story, variant = "compact" }: StoryCardProps) {
 
       <div
         className={cn(
-          "relative z-10 h-full text-white",
+          "z-10 text-white",
           isFeatured
-            ? "flex flex-col drop-shadow-[0_1px_8px_rgb(0_0_0/0.28)]"
-            : "grid grid-rows-[auto_1fr_auto]",
+            ? "absolute inset-0 flex flex-col p-3 drop-shadow-[0_1px_8px_rgb(0_0_0/0.28)] tablet:p-5"
+            : "relative grid h-full grid-rows-[auto_1fr_auto]",
         )}
       >
-        <div className="flex items-center justify-between gap-4 font-label text-xs leading-none uppercase">
+        <div
+          className={cn(
+            "flex items-center gap-4 font-label leading-none uppercase",
+            isFeatured ? "text-[0.6875rem] tablet:text-xs" : "text-xs",
+          )}
+        >
           <div className="flex items-center gap-[7px]">
             <span aria-hidden="true" className="size-3 rounded-full bg-white" />
             <span>{story.category}</span>
           </div>
-
-          {isFeatured && story.href ? <span>Read</span> : null}
         </div>
 
         {isFeatured ? (
-          <div className="mt-auto max-w-[92%]">
-            <h3 className="text-left font-display text-[clamp(1.75rem,3vw,3.5rem)] leading-[1.05]">
+          <div className="mt-auto max-w-[94%]">
+            <h3 className="text-balance text-left font-display text-lg leading-[1.05] tablet:text-xl laptop:text-[1.375rem] desktop:text-[1.75rem] wide:text-[2rem]">
               {story.title}
             </h3>
 
-            <p className="mt-2 text-left font-display text-[clamp(0.875rem,1.2vw,1.125rem)] leading-tight">
+            <p className="mt-1.5 text-left font-label text-[0.625rem] leading-tight tablet:mt-2 tablet:text-xs laptop:text-[0.8125rem] desktop:text-sm">
               by {story.author}
             </p>
           </div>
@@ -124,8 +127,10 @@ export function StoryCard({ story, variant = "compact" }: StoryCardProps) {
   const frameClassName =
     "relative p-2 before:pointer-events-none before:absolute before:inset-x-2 before:inset-y-0 before:z-20 before:border-y before:border-rule after:pointer-events-none after:absolute after:inset-x-0 after:inset-y-2 after:z-20 after:border-x after:border-rule tablet:p-4 tablet:before:inset-x-4 tablet:after:inset-y-4";
   const cardClassName = cn(
-    "relative isolate block w-full overflow-hidden bg-brand p-3",
-    isFeatured ? "aspect-[3/2] tablet:p-5" : "aspect-[0.956]",
+    "relative isolate block w-full overflow-hidden bg-brand",
+    isFeatured
+      ? "min-h-68 tablet:aspect-[3/2] tablet:min-h-0"
+      : "aspect-[0.956] p-3",
   );
 
   return (
