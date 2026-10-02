@@ -19,10 +19,12 @@ export const articleHeroContent = {
     draggable: true,
     sweep: true,
   },
-  author: "Eryck Assis",
-  authorHref: "/people/julien-bek",
-  publishedAt: "2026-03-05",
-  publishedLabel: "March 5, 2026",
+  meta: {
+    author: "Eryck Assis",
+    authorHref: "/people/julien-bek",
+    publishedAt: "2026-03-05",
+    publishedLabel: "March 5, 2026",
+  },
 } as const satisfies ArticleHeroContent;
 
 export const articleIntroContent = {

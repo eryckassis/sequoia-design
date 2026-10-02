@@ -1,20 +1,17 @@
-import {
-  ArticleContinuation,
-  ArticleFooter,
-  ArticleHero,
-  ArticleIntroSection,
-} from "@/components/article";
+import type { Metadata } from "next";
+
+import { ArticleHero } from "@/components/article";
+import { HomeStories } from "@/components/home";
 import { SkipLink, SiteFooter } from "@/components/layout";
 import { SiteHeader } from "@/components/navigation";
-import {
-  articleHeroContent,
-  articleIntroContent,
-  articleShareContent,
-} from "@/content/article";
-import { articleContinuationContent } from "@/content/article-continuation";
-import { articleIntroImage, opportunityMapImage } from "@/content/media";
+import { homeHeroContent, homeStories } from "@/content/home";
 import { primaryNavigation } from "@/content/navigation";
-import { relatedStories } from "@/content/related-stories";
+
+export const metadata: Metadata = {
+  title: "Sequoia — Design and ideas inspired by nature",
+  description:
+    "Independent perspectives on design, technology and the creative process.",
+};
 
 export default function Home() {
   return (
@@ -23,21 +20,8 @@ export default function Home() {
       <SiteHeader items={primaryNavigation} />
 
       <main id="main-content">
-        <article>
-          <ArticleHero content={articleHeroContent} />
-
-          <ArticleIntroSection
-            content={articleIntroContent}
-            image={articleIntroImage}
-          />
-
-          <ArticleContinuation
-            content={articleContinuationContent}
-            image={opportunityMapImage}
-          />
-
-          <ArticleFooter share={articleShareContent} stories={relatedStories} />
-        </article>
+        <ArticleHero content={homeHeroContent} />
+        <HomeStories stories={homeStories} />
       </main>
 
       <SiteFooter />

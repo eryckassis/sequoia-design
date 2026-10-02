@@ -1,27 +1,28 @@
 import { PageContainer } from "@/components/layout";
 import { StoryCard, type RelatedStory } from "@/components/stories";
 
-type RelatedStoriesProps = Readonly<{
+type HomeStoriesProps = Readonly<{
   stories: readonly RelatedStory[];
 }>;
 
-export function RelatedStories({ stories }: RelatedStoriesProps) {
+export function HomeStories({ stories }: HomeStoriesProps) {
   return (
     <section
-      aria-labelledby="related-stories-title"
-      className="bg-canvas pb-20"
+      id="stories"
+      aria-labelledby="home-stories-title"
+      className="scroll-mt-header bg-canvas pb-20 tablet:pb-24 wide:pb-32"
     >
-      <h2 id="related-stories-title" className="sr-only">
-        Related stories
+      <h2 id="home-stories-title" className="sr-only">
+        Stories
       </h2>
 
       <PageContainer>
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4">
+        <div className="grid grid-cols-1 laptop:grid-cols-2">
           {stories.map((story) => (
             <StoryCard
               key={`${story.category}-${story.title}`}
               story={story}
-              variant="compact"
+              variant="featured"
             />
           ))}
         </div>

@@ -3,10 +3,7 @@ import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
 import "./globals.css";
-import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const unica77 = localFont({
   src: [
@@ -57,8 +54,8 @@ const rosart = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Services: The New Software | Sequoia",
-  description: "Services: The New Software, by Eryck Assis.",
+  title: "Sequoia",
+  description: "Design and ideas inspired by nature.",
 };
 
 type RootLayoutProps = Readonly<{
@@ -74,7 +71,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         pitchSans.variable,
         rosart.variable,
         "font-sans",
-        geist.variable,
       )}
     >
       <body>{children}</body>

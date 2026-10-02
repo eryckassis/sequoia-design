@@ -12,9 +12,10 @@ export {
   type ArticleIntroSectionProps,
 } from "./ArticleIntroSection";
 export { ArticleMeta } from "./ArticleMeta";
+export { RelatedStories } from "./RelatedStories";
 export {
-  RelatedStories,
-  type RelatedStory,
-  type StoryMedia,
   StoryCard,
-} from "./RelatedStories";
+  type RelatedStory,
+  type StoryCardVariant,
+  type StoryMedia,
+} from "@/components/stories";

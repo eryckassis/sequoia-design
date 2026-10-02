@@ -1,5 +1,6 @@
+import type { RelatedStory } from "@/components/stories";
 import { ArticleShare, type ArticleShareContent } from "./ArticleShare";
-import { RelatedStories, type RelatedStory } from "./RelatedStories";
+import { RelatedStories } from "./RelatedStories";
 
 export type ArticleFooterProps = Readonly<{
   share: ArticleShareContent;

@@ -38,10 +38,12 @@ export const founderContent: FounderPageContent = {
       draggable: true,
       sweep: true,
     },
-    author: "Me",
-    authorHref: "/founder",
-    publishedAt: "2026-10-01",
-    publishedLabel: "October 1, 2026",
+    meta: {
+      author: "Me",
+      authorHref: "/founder",
+      publishedAt: "2026-10-01",
+      publishedLabel: "October 1, 2026",
+    },
   },
 
   intro: {
