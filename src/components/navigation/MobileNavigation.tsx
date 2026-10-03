@@ -108,6 +108,7 @@ function MenuIcon() {
   return (
     <span aria-hidden="true" className="relative block h-4 w-7">
       <span className="absolute inset-x-0 top-0 h-px bg-current" />
+      <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-current" />
       <span className="absolute inset-x-0 bottom-0 h-px bg-current" />
     </span>
   );
