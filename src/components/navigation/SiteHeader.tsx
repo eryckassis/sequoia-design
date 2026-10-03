@@ -1,5 +1,6 @@
 import { PageContainer } from "@/components/layout";
 import { BrandLogo } from "./BrandLogo";
+import { MobileNavigation } from "./MobileNavigation";
 import { PrimaryNavigation, type NavigationItem } from "./PrimaryNavigation";
 
 type SiteHeaderProps = Readonly<{
@@ -14,6 +15,7 @@ export function SiteHeader({ items }: SiteHeaderProps) {
 
         <div className="ml-auto flex items-center gap-1 laptop:gap-6 wide:gap-8.75">
           <PrimaryNavigation items={items} />
+          <MobileNavigation items={items} />
         </div>
 
         <span
