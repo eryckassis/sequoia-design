@@ -56,6 +56,7 @@ export function MobileNavigation({ items }: MobileNavigationProps) {
               <BrandLogo />
 
               <button
+                autoFocus
                 type="button"
                 aria-label="Close menu"
                 onClick={closeMenu}
