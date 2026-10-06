@@ -2,14 +2,16 @@ import { PageContainer } from "@/components/layout";
 import { BrandLogo } from "./BrandLogo";
 import { MobileNavigation } from "./MobileNavigation";
 import { PrimaryNavigation, type NavigationItem } from "./PrimaryNavigation";
+import { SiteHeaderFrame } from "./SiteHeaderFrame";
 
-type SiteHeaderProps = Readonly<{
+export type SiteHeaderProps = Readonly<{
   items: readonly NavigationItem[];
+  overlayUntilId?: string;
 }>;
 
-export function SiteHeader({ items }: SiteHeaderProps) {
+export function SiteHeader({ items, overlayUntilId }: SiteHeaderProps) {
   return (
-    <header className="fixed inset-x-0 top-0 z-9999 h-header bg-canvas">
+    <SiteHeaderFrame overlayUntilId={overlayUntilId}>
       <PageContainer className="relative flex h-full items-center">
         <BrandLogo />
 
@@ -20,9 +22,9 @@ export function SiteHeader({ items }: SiteHeaderProps) {
 
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-page-x-mobile right-page-x-mobile border-b border-rule tablet:left-page-x tablet:right-page-x"
+          className="pointer-events-none absolute bottom-0 left-page-x-mobile right-page-x-mobile border-b border-rule transition-colors duration-300 group-data-[overlay=true]:border-white/60 motion-reduce:transition-none tablet:left-page-x tablet:right-page-x"
         />
       </PageContainer>
-    </header>
+    </SiteHeaderFrame>
   );
 }

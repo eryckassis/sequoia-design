@@ -35,6 +35,7 @@ export const homeStories = [
     category: "Perspective",
     title: "2026: This is AGI",
     author: "Eryck Assis",
+    href: "/stories/2026-this-is-agi",
     media: relatedStoryMedia.thisIsAgi,
   },
   {

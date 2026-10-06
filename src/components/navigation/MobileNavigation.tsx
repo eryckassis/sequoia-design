@@ -38,7 +38,7 @@ export function MobileNavigation({ items }: MobileNavigationProps) {
         aria-controls="mobile-navigation"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(true)}
-        className="relative flex size-12 shrink-0 items-center justify-center text-foreground-strong focus-visible:outline-1 focus-visible:outline-offset-2 tablet:hidden"
+        className="relative flex size-12 shrink-0 items-center justify-center text-foreground-strong transition-colors duration-300 focus-visible:outline-1 focus-visible:outline-offset-2 group-data-[overlay=true]:text-white motion-reduce:transition-none tablet:hidden"
       >
         <MenuIcon />
       </button>

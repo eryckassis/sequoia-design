@@ -14,6 +14,11 @@ export {
 export { ArticleMeta } from "./ArticleMeta";
 export { RelatedStories } from "./RelatedStories";
 export {
+  ThisIsAgiHero,
+  THIS_IS_AGI_TITLE_PANEL_ID,
+  type ThisIsAgiHeroContent,
+} from "./ThisIsAgiHero";
+export {
   StoryCard,
   type RelatedStory,
   type StoryCardVariant,

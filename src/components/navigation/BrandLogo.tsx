@@ -5,7 +5,7 @@ export function BrandLogo() {
     <Link
       href="/"
       aria-label="Sequoia home"
-      className="block h-6 w-[180px] shrink-0 text-foreground-strong"
+      className="block h-6 w-[180px] shrink-0 text-foreground-strong transition-colors duration-300 group-data-[overlay=true]:text-white motion-reduce:transition-none"
     >
       <svg
         viewBox="0 0 180 24.043"
@@ -28,7 +28,7 @@ export function BrandLogo() {
         <use
           href="#brand-logo-wordmark"
           clipPath="url(#brand-logo-tree)"
-          className="text-brand"
+          className="text-brand transition-colors duration-300 group-data-[overlay=true]:text-white motion-reduce:transition-none"
         />
       </svg>
     </Link>
