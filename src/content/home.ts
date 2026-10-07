@@ -33,7 +33,7 @@ export const homeStories = [
   },
   {
     category: "Perspective",
-    title: "2026: This is AGI",
+    title: "2026: um ano para desacelerar.",
     author: "Eryck Assis",
     href: "/stories/2026-this-is-agi",
     media: {
