@@ -36,7 +36,10 @@ export const homeStories = [
     title: "2026: This is AGI",
     author: "Eryck Assis",
     href: "/stories/2026-this-is-agi",
-    media: relatedStoryMedia.thisIsAgi,
+    media: {
+      kind: "image",
+      src: "/images/cards/sun.png",
+    },
   },
   {
     category: "Perspective",

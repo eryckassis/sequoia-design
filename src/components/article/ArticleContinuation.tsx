@@ -19,19 +19,27 @@ type ArticleContinuationProps = Readonly<{
   content: ArticleContinuationContent;
   image?: ArticleSectionImage;
   showSideRules?: boolean;
+  showMedia?: boolean;
 }>;
 
 export function ArticleContinuation({
   content,
   image,
   showSideRules = true,
+  showMedia = true,
 }: ArticleContinuationProps) {
+  const hasClosingContent =
+    content.items.length > 0 ||
+    Boolean(content.closing) ||
+    Boolean(content.callToAction);
+
   return (
     <>
       <ArticleIntroSection
         afterMedia
         image={image}
         media="map"
+        showMedia={showMedia}
         showSideRules={showSideRules}
       >
         {content.sections.map(({ id, heading, paragraphs }) => (
@@ -51,19 +59,26 @@ export function ArticleContinuation({
         ))}
       </ArticleIntroSection>
 
-      <div className="bg-canvas pb-16 desktop:pb-[84px]">
-        <ArticleIntroSection afterMedia showSideRules={showSideRules}>
-          {content.items.map(({ label, description }) => (
-            <p key={label}>
-              <strong className="font-semibold">{label}. </strong>
-              {description}
-            </p>
-          ))}
+      {hasClosingContent ? (
+        <div className="bg-canvas pb-16 desktop:pb-[84px]">
+          <ArticleIntroSection
+            afterMedia
+            showMedia={false}
+            showSideRules={showSideRules}
+          >
+            {content.items.map(({ label, description }) => (
+              <p key={label}>
+                <strong className="font-semibold">{label}. </strong>
+                {description}
+              </p>
+            ))}
 
-          <p>{content.closing}</p>
-          <p>{content.callToAction}</p>
-        </ArticleIntroSection>
-      </div>
+            {content.closing ? <p>{content.closing}</p> : null}
+
+            {content.callToAction ? <p>{content.callToAction}</p> : null}
+          </ArticleIntroSection>
+        </div>
+      ) : null}
     </>
   );
 }

@@ -34,6 +34,7 @@ export function ThisIsAgiHero({ content }: ThisIsAgiHeroProps) {
         src={content.image.src}
         alt={content.image.alt}
         fill
+        unoptimized
         sizes="100vw"
         fetchPriority="high"
         className="-z-20 object-cover object-center"

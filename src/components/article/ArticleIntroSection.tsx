@@ -29,6 +29,8 @@ export type ArticleIntroSectionProps = SectionBody &
     media?: "panorama" | "map";
     afterMedia?: boolean;
     showSideRules?: boolean;
+    showMedia?: boolean;
+    dropCap?: boolean;
   }>;
 
 export function ArticleIntroSection({
@@ -38,9 +40,25 @@ export function ArticleIntroSection({
   media,
   afterMedia = false,
   showSideRules = true,
+  showMedia = true,
+  dropCap = false,
 }: ArticleIntroSectionProps) {
   const hasImage = Boolean(image?.src);
-  const mediaKind = media ?? (content || image ? "panorama" : undefined);
+  const mediaKind = showMedia
+    ? (media ?? (content || image ? "panorama" : undefined))
+    : undefined;
+
+  const dropCapClassName = dropCap
+    ? [
+        "[&>p:first-child]:first-letter:float-left",
+        "[&>p:first-child]:first-letter:font-body",
+        "[&>p:first-child]:first-letter:font-[100]",
+        "[&>p:first-child]:first-letter:text-[5rem]",
+        "[&>p:first-child]:first-letter:leading-[0.7]",
+        "desktop:[&>p:first-child]:first-letter:text-[6.25rem]",
+        "desktop:[&>p:first-child]:first-letter:leading-[0.68]",
+      ].join(" ")
+    : "";
 
   return (
     <section className="bg-canvas">
@@ -54,16 +72,20 @@ export function ArticleIntroSection({
               : ""
           }`}
         >
-          <div className="flex flex-col gap-8 font-body text-body-mobile text-foreground desktop:gap-10 desktop:text-body-desktop">
+          <div
+            className={`flex flex-col gap-8 font-body text-body-mobile text-foreground desktop:gap-10 desktop:text-body-desktop ${dropCapClassName}`}
+          >
             {content ? (
               <>
                 <p>{content.lead}</p>
                 <p>{content.overview}</p>
+
                 <p>
                   <strong className="font-semibold">
                     {content.sectionTitle}
                   </strong>
                 </p>
+
                 <p>
                   {content.thesis.prefix}
                   <em className="italic">{content.thesis.firstTerm}</em>
@@ -71,6 +93,7 @@ export function ArticleIntroSection({
                   <em className="italic">{content.thesis.secondTerm}</em>
                   {content.thesis.suffix}
                 </p>
+
                 <p>{content.explanation}</p>
                 <p>{content.conclusion}</p>
               </>
