@@ -13,14 +13,17 @@ export {
 } from "./ArticleIntroSection";
 export { ArticleMeta } from "./ArticleMeta";
 export { RelatedStories } from "./RelatedStories";
-export {
-  ThisIsAgiHero,
-  THIS_IS_AGI_TITLE_PANEL_ID,
-  type ThisIsAgiHeroContent,
-} from "./ThisIsAgiHero";
+
 export {
   StoryCard,
   type RelatedStory,
   type StoryCardVariant,
   type StoryMedia,
 } from "@/components/stories";
+
+export { EditorialHero, EDITORIAL_HERO_TITLE_PANEL_ID } from "./EditorialHero";
+export type {
+  EditorialEntry,
+  EditorialHeroContent,
+  EditorialMetadata,
+} from "@/content/editorial/types";

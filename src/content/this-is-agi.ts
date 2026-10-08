@@ -1,9 +1,10 @@
 import type {
-  ArticleContinuationContent,
-  ArticleIntroContent,
-  ArticleShareContent,
-  ThisIsAgiHeroContent,
-} from "@/components/article";
+  EditorialContinuationContent,
+  EditorialEntry,
+  EditorialHeroContent,
+  EditorialIntroContent,
+  EditorialShareContent,
+} from "@/content/editorial/types";
 import { thisIsAgiHeroImage } from "@/content/media";
 
 export const thisIsAgiMetadata = {
@@ -21,7 +22,7 @@ export const thisIsAgiHeroContent = {
   publishedLabel: "October 5, 2026",
   subtitle: "E se não desacelerarmos agora? O que acontecerá no futuro?",
   image: thisIsAgiHeroImage,
-} as const satisfies ThisIsAgiHeroContent;
+} as const satisfies EditorialHeroContent;
 
 export const thisIsAgiIntroContent = {
   lead: "No contexto atual, vivemos imersos em um ambiente de constante estímulos, informações fragmentadas e inovações tecnológicas que moldam a maneira como pensamos, nos relacionamos e consumimos conteúdo.",
@@ -48,7 +49,7 @@ export const thisIsAgiIntroContent = {
 
   conclusion:
     "A psicologia clínica enfatiza a importância de momentos de pausa para o restabelecimento do equilíbrio emocional, a assimilação de aprendizados e a prevenção de transtornos como burnout, depressão e insônia.",
-} as const satisfies ArticleIntroContent;
+} as const satisfies EditorialIntroContent;
 
 export const thisIsAgiContinuationContent = {
   sections: [
@@ -72,8 +73,14 @@ export const thisIsAgiContinuationContent = {
   items: [],
   closing: "",
   callToAction: "",
-} as const satisfies ArticleContinuationContent;
+} as const satisfies EditorialContinuationContent;
 
-export const thisIsAgiShareContent = {
-  title: "2026: Um ano para desacelerar.",
-} as const satisfies ArticleShareContent;
+export const thisIsAgiEditorialEntry = {
+  slug: "2026-this-is-agi",
+  href: "/stories/2026-this-is-agi",
+  metadata: thisIsAgiMetadata,
+  hero: thisIsAgiHeroContent,
+  intro: thisIsAgiIntroContent,
+  continuation: thisIsAgiContinuationContent,
+  share: thisIsAgiHeroContent,
+} as const satisfies EditorialEntry;

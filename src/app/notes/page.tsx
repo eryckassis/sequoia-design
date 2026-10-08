@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
 
 import {
-  ArticleContinuation,
   ArticleFooter,
-  ArticleIntroSection,
   EDITORIAL_HERO_TITLE_PANEL_ID,
   EditorialHero,
 } from "@/components/article";
 import { SkipLink, SiteFooter } from "@/components/layout";
 import { SiteHeader } from "@/components/navigation";
+import { NotesSection } from "@/components/notes";
 import { getEditorialEntry } from "@/content/editorial";
 import { primaryNavigation } from "@/content/navigation";
 import { relatedStories } from "@/content/related-stories";
 
-const article = getEditorialEntry("2026-this-is-agi");
+const notes = getEditorialEntry("notes");
 
-export const metadata: Metadata = article.metadata;
+export const metadata: Metadata = notes.metadata;
 
-export default function ThisIsAgiPage() {
+export default function NotesPage() {
   return (
     <>
       <SkipLink />
@@ -29,20 +28,10 @@ export default function ThisIsAgiPage() {
 
       <main id="main-content">
         <article>
-          <EditorialHero content={article.hero} />
+          <EditorialHero content={notes.hero} />
 
-          <ArticleIntroSection
-            content={article.intro}
-            showMedia={false}
-            dropCap
-          />
-
-          <ArticleContinuation
-            content={article.continuation}
-            showMedia={false}
-          />
-
-          <ArticleFooter share={article.share} stories={relatedStories} />
+          <NotesSection posts={notes.posts} />
+          <ArticleFooter share={notes.share} stories={relatedStories} />
         </article>
       </main>
 

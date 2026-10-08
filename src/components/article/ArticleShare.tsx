@@ -1,9 +1,8 @@
+import type { EditorialShareContent } from "@/content/editorial/types";
+
 type SharePlatform = "facebook" | "x" | "linkedin" | "email";
 
-export type ArticleShareContent = Readonly<{
-  title: string;
-  url?: string;
-}>;
+export type ArticleShareContent = EditorialShareContent;
 
 type ArticleShareProps = Readonly<{
   content: ArticleShareContent;

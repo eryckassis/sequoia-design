@@ -2,32 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout";
+import type { EditorialHeroContent } from "@/content/editorial/types";
 
-export const THIS_IS_AGI_TITLE_PANEL_ID = "this-is-agi-title-panel";
+export const EDITORIAL_HERO_TITLE_PANEL_ID = "editorial-hero-title-panel";
 
-export type ThisIsAgiHeroContent = Readonly<{
-  title: string;
-  author: Readonly<{
-    name: string;
-    href: string;
-  }>;
-  publishedAt: string;
-  publishedLabel: string;
-  subtitle: string;
-  image: Readonly<{
-    src: string;
-    alt: string;
-  }>;
+type EditorialHeroProps = Readonly<{
+  content: EditorialHeroContent;
 }>;
 
-type ThisIsAgiHeroProps = Readonly<{
-  content: ThisIsAgiHeroContent;
-}>;
-
-export function ThisIsAgiHero({ content }: ThisIsAgiHeroProps) {
+export function EditorialHero({ content }: EditorialHeroProps) {
   return (
     <section
-      aria-labelledby="this-is-agi-title"
+      aria-labelledby="editorial-hero-title"
       className="relative isolate overflow-hidden bg-black text-white"
     >
       <Image
@@ -39,24 +25,44 @@ export function ThisIsAgiHero({ content }: ThisIsAgiHeroProps) {
         fetchPriority="high"
         className="-z-20 object-cover object-center"
       />
+
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-black/15"
       />
 
-      <div id={THIS_IS_AGI_TITLE_PANEL_ID} className="min-h-svh">
-        <PageContainer className="relative flex min-h-svh items-center justify-center">
-          <h1
-            id="this-is-agi-title"
-            className="max-w-title text-balance text-center font-display text-display-mobile font-normal tablet:text-display-tablet laptop:text-display-desktop wide:text-display-wide"
-          >
-            {content.title}
-          </h1>
+      <div id={EDITORIAL_HERO_TITLE_PANEL_ID} className="min-h-svh">
+        <PageContainer className="relative min-h-svh">
+          <div className="relative flex min-h-svh items-center justify-center">
+            <h1
+              id="editorial-hero-title"
+              className="max-w-title text-balance text-center font-display text-display-mobile font-normal tablet:text-display-tablet laptop:text-display-desktop wide:text-display-wide"
+            >
+              {content.title}
+            </h1>
 
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-page-x-mobile bottom-0 border-b border-white/60 tablet:inset-x-page-x"
-          />
+            {/* Filetes horizontais */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-4 top-0 border-t border-white/60"
+            />
+
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-4 bottom-0 border-b border-white/60"
+            />
+
+            {/* Filetes verticais */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-30 left-0 border-l border-white/60"
+            />
+
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-30 right-0 border-r border-white/60"
+            />
+          </div>
         </PageContainer>
       </div>
 
@@ -70,6 +76,7 @@ export function ThisIsAgiHero({ content }: ThisIsAgiHeroProps) {
                   {content.publishedLabel}
                 </time>
               </p>
+
               <p>
                 By{" "}
                 <Link
@@ -83,7 +90,7 @@ export function ThisIsAgiHero({ content }: ThisIsAgiHeroProps) {
           </div>
 
           <div className="flex items-center justify-center px-6 py-12 tablet:px-12 laptop:px-16">
-            <p className="max-w-[32rem] text-balance text-center font-body text-2xl leading-[1.08] tablet:text-[1.625rem] laptop:text-[2rem]">
+            <p className="max-w-lg text-balance text-center font-body text-2xl leading-[1.08] tablet:text-[1.625rem] laptop:text-[2rem]">
               {content.subtitle}
             </p>
           </div>

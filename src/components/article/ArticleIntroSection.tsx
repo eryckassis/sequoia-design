@@ -1,23 +1,14 @@
-import Image, { type ImageProps } from "next/image";
+import Image from "next/image";
 import type { ReactNode } from "react";
+
 import { PageContainer } from "@/components/layout";
+import type {
+  EditorialImage,
+  EditorialIntroContent,
+} from "@/content/editorial/types";
 
-export type ArticleIntroContent = Readonly<{
-  lead: string;
-  overview: string;
-  sectionTitle: string;
-  thesis: Readonly<{
-    prefix: string;
-    firstTerm: string;
-    middle: string;
-    secondTerm: string;
-    suffix: string;
-  }>;
-  explanation: string;
-  conclusion: string;
-}>;
-
-export type ArticleSectionImage = Readonly<Pick<ImageProps, "src" | "alt">>;
+export type ArticleIntroContent = EditorialIntroContent;
+export type ArticleSectionImage = EditorialImage;
 
 type SectionBody =
   | Readonly<{ content: ArticleIntroContent; children?: never }>

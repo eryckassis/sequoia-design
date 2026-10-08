@@ -1,19 +1,8 @@
+import type { EditorialContinuationContent } from "@/content/editorial/types";
 import type { ArticleSectionImage } from "./ArticleIntroSection";
 import { ArticleIntroSection } from "./ArticleIntroSection";
 
-export type ArticleContinuationContent = Readonly<{
-  sections: readonly Readonly<{
-    id: string;
-    heading: string;
-    paragraphs: readonly string[];
-  }>[];
-  items: readonly Readonly<{
-    label: string;
-    description: string;
-  }>[];
-  closing: string;
-  callToAction: string;
-}>;
+export type ArticleContinuationContent = EditorialContinuationContent;
 
 type ArticleContinuationProps = Readonly<{
   content: ArticleContinuationContent;
@@ -60,7 +49,7 @@ export function ArticleContinuation({
       </ArticleIntroSection>
 
       {hasClosingContent ? (
-        <div className="bg-canvas pb-16 desktop:pb-[84px]">
+        <div className="bg-canvas pb-16 desktop:pb-21">
           <ArticleIntroSection
             afterMedia
             showMedia={false}
