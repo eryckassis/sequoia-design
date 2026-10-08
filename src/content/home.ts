@@ -3,8 +3,7 @@ import type { RelatedStory } from "@/components/stories";
 import { relatedStoryMedia } from "@/content/media";
 
 export const homeHeroContent = {
-  title:
-    "A Place Where My Perspectives, Ideas, and Trends Come to Life, Enjoy the Read.",
+  title: "A Place Where My Perspectives Ideas and Trends Come to Life",
   techText: {
     text: "Sequoia",
     fontWeight: 400,
