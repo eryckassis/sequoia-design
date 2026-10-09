@@ -18,15 +18,15 @@ export type FounderPageContent = Readonly<{
 
 export const founderContent: FounderPageContent = {
   metadata: {
-    title: "Founder | Sequoia",
+    title: "Fundador | Sequoia",
     description:
-      "Meet Eryck, the creator of a design newsletter about web design, programming, data, and the creative process.",
+      "Conheça Eryck, criador de uma newsletter sobre design para web, programação, dados e processo criativo.",
   },
 
   hero: {
-    title: "Inspired By Nature.",
+    title: "Inspirado pela natureza.",
     techText: {
-      text: "Founder:",
+      text: "Fundador:",
       fontWeight: 400,
       color: "#1b1917",
       accentColor: "#007354",
@@ -39,51 +39,51 @@ export const founderContent: FounderPageContent = {
       sweep: true,
     },
     meta: {
-      author: "Me",
+      author: "Eu",
       authorHref: "/founder",
       publishedAt: "2026-10-01",
-      publishedLabel: "October 1, 2026",
+      publishedLabel: "1 de outubro de 2026",
     },
   },
 
   intro: {
-    lead: "Hello, my name is Eryck. I am the creator of this design newsletter—at least, that’s how I’m calling this project for now. I’ll keep this about-me short and sweet, just enough to introduce my ideas, studies, and notes not only in web design, but also programming and data. My approach stays lighthearted, straightforward, and accessible, even for curious beginners.",
+    lead: "Olá, meu nome é Eryck. Sou o criador desta newsletter de design — pelo menos é assim que chamo este projeto por enquanto. Vou manter esta apresentação breve e direta, o suficiente para apresentar minhas ideias, estudos e anotações não apenas sobre design para web, mas também sobre programação e dados. Minha abordagem é leve, objetiva e acessível, mesmo para iniciantes curiosos.",
     overview:
-      "This project began as a way to share my work, thoughts, and discoveries with you. I wanted a place to showcase my projects and reflect on recent design trends, as well as to discuss the habits and stories behind my creative process. My hope is that this newsletter will spark your curiosity and encourage you to keep up with my journey, offering an alternative to the overwhelming content often found online.",
+      "Este projeto nasceu como uma forma de compartilhar meu trabalho, pensamentos e descobertas com você. Eu queria um espaço para apresentar meus projetos e refletir sobre tendências recentes de design, além de conversar sobre os hábitos e as histórias por trás do meu processo criativo. Espero que esta newsletter desperte sua curiosidade e incentive você a acompanhar minha jornada, oferecendo uma alternativa ao conteúdo excessivo que muitas vezes encontramos on-line.",
     sectionTitle:
-      "I’m always brimming with ideas and love the challenge of turning them into reality. For me, it’s about transforming a scribble on paper into something tangible and useful—something that makes sense for real people.",
+      "Estou sempre cheio de ideias e adoro o desafio de transformá-las em realidade. Para mim, trata-se de transformar um rabisco no papel em algo tangível e útil — algo que faça sentido para pessoas reais.",
     thesis: {
       prefix:
-        "Lately, I’ve been deeply immersed in countless projects, studies, and case analyses. I’m also exploring ",
-      firstTerm: "new professional opportunities",
-      middle: " in my field, fueled by a ",
-      secondTerm: "genuine desire",
-      suffix: " to make a difference.",
+        "Ultimamente, tenho mergulhado em inúmeros projetos, estudos e análises de casos. Também estou explorando ",
+      firstTerm: "novas oportunidades profissionais",
+      middle: " na minha área, movido por um ",
+      secondTerm: "desejo genuíno",
+      suffix: " de fazer a diferença.",
     },
     explanation:
-      "Creativity, trends, tips, guidance, and fresh perspectives—these are just the tip of the iceberg of what you’ll find here. I promise everything I share will be grounded in evidence, especially when it comes to emerging trends.",
+      "Criatividade, tendências, dicas, orientações e novas perspectivas — isso é apenas a ponta do iceberg do que você encontrará aqui. Prometo que tudo o que eu compartilhar será fundamentado em evidências, especialmente quando se tratar de tendências emergentes.",
     conclusion:
-      "My mission is to help you tap into your creative side and put it into action.",
+      "Minha missão é ajudar você a acessar seu lado criativo e colocá-lo em prática.",
   },
 
   continuation: {
     sections: [
       {
         id: "a-free-evolving-newsletter",
-        heading: "Most importantly, this newsletter will always be free.",
+        heading: "Mais importante: esta newsletter será sempre gratuita.",
         paragraphs: [
-          "Over time, it might become something like a diary of a web designer—an evolving product for anyone who wants to follow along.",
+          "Com o tempo, ela pode se tornar algo como o diário de um designer para web — um projeto em evolução para quem quiser acompanhar.",
         ],
       },
     ],
     items: [],
     closing:
-      "So, welcome to this space! I hope you enjoy reading as much as I enjoy creating it. Let’s explore, learn, and grow together, one edition at a time.",
+      "Então, seja bem-vindo a este espaço! Espero que você goste de ler tanto quanto eu gosto de criar. Vamos explorar, aprender e crescer juntos, uma edição por vez.",
     callToAction:
-      "Thank you for joining me on this journey. Stay curious and inspired!",
+      "Obrigado por acompanhar esta jornada. Continue curioso e inspirado!",
   },
 
   share: {
-    title: "Hello, my name is Eryck.",
+    title: "Olá, meu nome é Eryck.",
   },
 };
