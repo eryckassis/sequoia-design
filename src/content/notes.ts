@@ -87,6 +87,30 @@ export const notesPosts = [
       },
     },
   },
+  {
+    id: "technology",
+    author: {
+      name: "Eryck Assis",
+      handle: "eryckassis",
+      href: "/founder",
+      verified: true,
+      avatar: {
+        src: "/images/notes/eryck-perfil.png",
+        alt: "Eryck Assis",
+      },
+    },
+    publishedAt: "2026-10-09",
+    publishedLabel: "Oct 9",
+    paragraphs: [
+      "Apresento um pouco do início do desenvolvimento dos Bunnies;",
+      "Este projeto foi criado para auxiliá-lo com agentes de codinome Bunnie, permitindo conectar suas ferramentas, sua IDE e facilitar o seu desenvolvimento no dia a dia.",
+    ],
+    media: {
+      kind: "video",
+      src: "/videos/videos.mp4",
+      title: "Technology and attention",
+    },
+  },
 ] as const satisfies readonly NotePostContent[];
 
 export const notesShareContent = {

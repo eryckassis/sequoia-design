@@ -1,4 +1,5 @@
 import { BadgeCheck } from "lucide-react";
+import { NoteVideo } from "./NoteVideo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -82,32 +83,20 @@ function AuthorName({ author }: Readonly<{ author: NotePostAuthor }>) {
 }
 
 function PostMedia({ media }: Readonly<{ media: NotePostMedia }>) {
-  if (media.kind === "image") {
-    return (
-      <div className="relative mt-6 aspect-video overflow-hidden rounded-2xl border border-rule bg-foreground/5">
-        <Image
-          src={media.image.src}
-          alt={media.image.alt}
-          fill
-          sizes="(min-width: 768px) 600px, calc(100vw - 96px)"
-          className="object-cover"
-        />
-      </div>
-    );
+  if (media.kind === "video") {
+    return <NoteVideo media={media} />;
   }
 
   return (
-    <video
-      controls
-      playsInline
-      preload="metadata"
-      poster={media.poster}
-      aria-label={media.title}
-      className="mt-6 aspect-video w-full rounded-2xl border border-rule bg-black object-cover"
-    >
-      <source src={media.src} />
-      Your browser does not support embedded videos.
-    </video>
+    <div className="relative mt-6 aspect-video overflow-hidden rounded-2xl border border-rule bg-foreground/5">
+      <Image
+        src={media.image.src}
+        alt={media.image.alt}
+        fill
+        sizes="(min-width: 768px) 600px, calc(100vw - 96px)"
+        className="object-cover"
+      />
+    </div>
   );
 }
 
