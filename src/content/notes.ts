@@ -8,12 +8,12 @@ import type {
 import { notesHeroImage } from "@/content/media";
 
 export const notesMetadata = {
-  title: "Notes",
+  title: "Notas",
   description: "Notes on design, technology, and what comes next.",
 } as const satisfies EditorialMetadata;
 
 export const notesHeroContent = {
-  title: "Notes",
+  title: "Notas",
   author: {
     name: "Eryck Assis",
     href: "/founder",

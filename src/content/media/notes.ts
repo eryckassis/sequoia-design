@@ -1,4 +1,4 @@
 export const notesHeroImage = {
-  src: "/images/notes/Notes.png",
+  src: "/images/notes/orange.png",
   alt: "",
 } as const;
