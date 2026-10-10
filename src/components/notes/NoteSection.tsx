@@ -5,20 +5,26 @@ import { NotePost } from "./NotePost";
 
 type NotesSectionProps = Readonly<{
   posts: readonly NotePostContent[];
+  title?: string;
+  headingId?: string;
 }>;
 
-export function NotesSection({ posts }: NotesSectionProps) {
+export function NotesSection({
+  posts,
+  title = "Notes",
+  headingId = "notes-feed-title",
+}: NotesSectionProps) {
   if (posts.length === 0) {
     return null;
   }
 
   return (
     <section
-      aria-labelledby="notes-feed-title"
+      aria-labelledby={headingId}
       className="bg-canvas py-16 tablet:py-24"
     >
-      <h2 id="notes-feed-title" className="sr-only">
-        Notes
+      <h2 id={headingId} className="sr-only">
+        {title}
       </h2>
 
       <PageContainer>
